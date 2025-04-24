@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
 
         // DIPISAH
         $this->call([CategoryPostSeeder::class, UserSeeder::class]);
-        Post::factory(10)->recycle([
+        Post::factory(100)->recycle([
             CategoryPost::all(),
             User::all()
         ])->create();
