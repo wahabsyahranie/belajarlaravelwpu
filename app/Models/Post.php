@@ -15,8 +15,8 @@ class Post extends Model
         'slug', 'title', 'author', 'body'
     ];
 
-    //Menggunakan Eager Loading
-    protected $with = ['user', 'category'];
+    //Menggunakan Eager Loading di Model
+    // protected $with = ['user', 'category'];
 
     public function user() : BelongsTo {
         return $this->belongsTo(User::class);

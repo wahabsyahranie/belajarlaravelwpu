@@ -20,7 +20,9 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', function () {
-    return view('posts', ['title' => 'Blog Page', 'posts' => Post::all() ]);
+    //Eager Loading di Router
+    $post = Post::with(['user', 'category'])->get();
+    return view('posts', ['title' => 'Blog Page', 'posts' => $post ]);
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
