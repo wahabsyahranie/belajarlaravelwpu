@@ -23,7 +23,7 @@ Route::get('/posts', function () {
     //Eager Loading di Router
     // $post = Post::with(['user', 'category'])->get();
 
-    return view('posts', ['title' => 'Blog Page', 'posts' => Post::filter(request(['search', 'category', 'author']))->latest()->get()]);
+    return view('posts', ['title' => 'Blog Page', 'posts' => Post::filter(request(['search', 'category', 'author']))->latest()->paginate(15)->withQueryString()]);
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {

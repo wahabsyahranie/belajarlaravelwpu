@@ -2,7 +2,6 @@
 @import "flowbite/src/themes/default";
 @source "../views";
 @plugin "flowbite/plugin";
-
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
