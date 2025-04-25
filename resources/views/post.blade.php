@@ -12,9 +12,11 @@
                 <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                     <img class="mr-4 w-16 h-16 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="{{ $post->user->name }}">
                     <div>
-                        <a href="#" rel="author" class="lg:text-xl font-bold text-gray-900 dark:text-white text-sm">{{ $post->user->name }}</a>
+                        <a href="/posts?author={{ $post->user->username }}" rel="author" class="lg:text-xl font-bold text-gray-900 dark:text-white text-sm">{{ $post->user->name }}</a>
                         <p class="text-sm lg:text-xl text-gray-500 dark:text-gray-400"><time pubdate datetime="2022-02-08" title="February 8th, 2022">{{ $post->created_at->diffForHumans() }}</time></p>
-                        <span class="bg-blue-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">{{ $post->category->name }}</span>
+                        <a href="/posts?category={{ $post->category->slug }}">
+                          <span class="bg-blue-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">{{ $post->category->name }}</span>
+                        </a>
                     </div>
                 </div>
             </address>
